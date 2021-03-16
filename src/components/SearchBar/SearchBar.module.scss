@@ -1,0 +1,45 @@
+@import '../../styles/base';
+
+.SearchBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $border-radius;
+  overflow: hidden;
+  
+  .SearchBar__input {
+      font-size: 1.125rem;
+      flex-grow: 1;
+      padding: 0 1rem;
+      border: none;
+      height: 2.5rem;
+      color: $secondary-text;
+      
+      &:focus {
+          outline: none;
+      }
+  }
+
+  .SearchBar__iconWrapper {
+      flex-grow: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 2.5rem;
+      background-color: $light-gray;        
+      padding: 10px;
+      box-sizing: border-box;
+      cursor: pointer;
+
+      img {
+          width: 100%;
+          height: auto;
+      }
+  }
+
+}
+
+.SearchBar__fullWidth {
+  width: 100%;
+}

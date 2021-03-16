@@ -1,0 +1,23 @@
+@import '../../styles/base';
+
+.AppBar {
+  background-color: $primary;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .AppBar__Container {
+    width: 100%;
+
+    .AppBar__Container__ContentWrapper {
+      margin: auto !important;
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 2rem;
+    }
+
+  
+  }  
+}

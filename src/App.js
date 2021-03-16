@@ -1,12 +1,11 @@
 import React from 'react';
-import logo from './assets/Logo_ML@2x.png.png';
 import classes from './App.module.scss';
-
+import AppBar from './components/AppBar/AppBar';
 
 function App() {
   return (    
     <div className={classes.App}>
-      <div><img src={logo} alt="Logo Mercadolibre"/></div>
+      <AppBar/>
     </div>
   );
 }
