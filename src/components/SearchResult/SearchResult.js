@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import ListItem from '../ListItem/ListItem';
 import Layout from '../Layout/Layout';
 import axios from 'axios';
+import cx from './SearchResult.module.scss';
 
 function SearchResult() {
   const { search } = useLocation();
@@ -26,9 +27,11 @@ function SearchResult() {
   },[search]);  
 
   return (
-    <Layout>
-      { items.map((item) => <ListItem key={`item-${item.id}`} itemData={item} /> )}
-    </Layout>
+    <div className={cx.SearchResult}>
+      <Layout>
+        { items.map((item) => <ListItem key={`item-${item.id}`} itemData={item} /> )}
+      </Layout>
+    </div>
 
   );
 }

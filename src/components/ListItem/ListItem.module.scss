@@ -3,6 +3,39 @@
 .ListItem {
   background-color: #fff;
   border-radius: $border-radius;
-  padding: 16px;
   text-align: left;
+
+  .ListItem__Link {
+    text-decoration: none;
+    color: initial;
+    display: flex;
+    border-bottom: 1px solid $light-gray;
+    padding: 16px;
+
+    .ListItem__ImgWrapper {
+      width: 180px;
+      height: 180px;
+      border-radius: $border-radius;
+      overflow: hidden;
+      margin-right: 16px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .ListItem__MainInfo {
+      flex-grow: 1;
+
+      .ListItem__MainInfo__Price {
+        font-size: 1.5rem;
+      }
+    }
+
+    .ListItem__SecondaryInfo {
+      width: 300px
+    }
+  }
 }
