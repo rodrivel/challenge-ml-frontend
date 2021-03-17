@@ -10,7 +10,7 @@ import SearchResult from './components/SearchResult/SearchResult';
 import ProductDetail from './components/ProductDetail/ProductDetail';
 
 function App() {
-  return (    
+  return (
     <BrowserRouter>
       <div className={classes.App}>
         <AppBar/>
