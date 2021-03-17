@@ -8,26 +8,29 @@ function SearchBar(props) {
   
   const [searchValue, setSearchValue] = React.useState('');
   const history = useHistory();  
-  const { search } = useLocation();
+  let { search } = useLocation();
   
   useEffect(()=> {
     const query = new URLSearchParams(search);
-    const q = query.get('q');    
-    if (q) {
-      setSearchValue(q);
-    }
+    const q = query.get('q');
+    setSearchValue(q || '');
   },[search]);
 
   const submitSearchHandler = (e) => {
     e.preventDefault();    
-    const searchValue = e.target.q.value;
-    if (searchValue && searchValue !== '')      
-      history.push(`/items?q=${searchValue}`);
+    const inputValue = e.target.q.value;
+    if (inputValue && inputValue !== '') {
+      history.push(`/items?q=${inputValue}`);
+    }
   };
   
+  const handleChange = (e) => {
+    setSearchValue(e.target.value);
+  }
+
   return (
     <form onSubmit={submitSearchHandler} className={[cx.SearchBar, props.fullWidth ? cx.SearchBar__fullWidth : ''].join(' ')}>  
-        <input autoComplete='off' className={cx.SearchBar__input} name="q" placeholder="Nunca dejes de buscar" defaultValue={searchValue}/>
+        <input autoComplete='off' className={cx.SearchBar__input} name="q" placeholder="Nunca dejes de buscar" value={searchValue} onChange={handleChange}/>
         <button className={cx.SearchBar__button} type="submit">
           <img src={searchIcon} alt="Icon buscar"/>
         </button>
