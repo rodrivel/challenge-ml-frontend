@@ -9,7 +9,7 @@
     text-decoration: none;
     color: initial;
     display: flex;
-    border-bottom: 1px solid $light-gray;
+    color: $secondary-text;
     padding: 16px;
 
     .ListItem__ImgWrapper {
@@ -28,14 +28,37 @@
 
     .ListItem__MainInfo {
       flex-grow: 1;
+      font-size: 1.125rem;
+      padding: 32px 0;
 
       .ListItem__MainInfo__Price {
         font-size: 1.5rem;
+        color: $primary-text;
+
+        .ListItem__MainInfo__Price__Block {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          line-height: 1;
+        }
+      }
+
+      .ListItem__MainInfo__Title {
+        margin-top: 32px;      
+        line-height: 1;  
       }
     }
 
     .ListItem__SecondaryInfo {
-      width: 300px
+      width: 260px;
+      padding: 40px 0;
+      font-size: 12px;
+      color: $secondary-text;
     }
+  }
+
+  .ListItem__Divider {
+    margin: 0 16px;
+    border-bottom: 1px solid $light-gray;
   }
 }

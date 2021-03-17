@@ -23,16 +23,18 @@ function ListItem(props) {
         </div>
         <div className={cx.ListItem__MainInfo}>
           <div className={cx.ListItem__MainInfo__Price}>
-            <span>{price.currency === 'ARS' ? '$ ' : price.currency }{currencyFormat(price.amount)}</span>
-            { itemData.free_shipping && <span><img src={iconFreeShipping}/></span> }
+            <div className={cx.ListItem__MainInfo__Price__Block}>
+              <span>{price.currency === 'ARS' ? '$ ' : price.currency }{currencyFormat(price.amount)}</span>
+              { itemData.free_shipping && <span><img width={20} src={iconFreeShipping}/></span> }
+            </div>
           </div>
-          <div>{itemData.title}</div>
-          <div>{itemData.condition}</div>
+          <div className={cx.ListItem__MainInfo__Title}>{itemData.title}</div>          
         </div>
         <div className={cx.ListItem__SecondaryInfo}>
           Capital Federal
         </div>        
       </Link>
+      <div className={cx.ListItem__Divider}></div>
     </div>
   );
 }
