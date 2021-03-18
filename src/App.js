@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import AppBar from './components/AppBar/AppBar';
 import SearchResult from './components/SearchResult/SearchResult';
-import ProductDetail from './components/ProductDetail/ProductDetail';
+import ItemDetail from './components/ItemDetail/ItemDetail';
 import { ErrorBoundary } from 'react-error-boundary';
 import ErrorFallback from './components/ErrorFallback/ErrorFallback';
 
@@ -24,7 +24,7 @@ function App() {
           <AppBar/>
           <Switch>
             <Route path="/items/:id">
-              <ProductDetail />
+              <ItemDetail />
             </Route>
             <Route path="/items">
               <SearchResult />
