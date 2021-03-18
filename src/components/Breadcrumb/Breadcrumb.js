@@ -8,7 +8,7 @@ function Breadcrumb(props) {
 
   return (
     <div className={cx.Breadcrumb}>
-      { categories.map((category, index) => <div className={cx.Breadcrumb__Item} key={`bc-${index}`}>{ index > 0 ? <ArrowRight/> : '' }{category}</div> ) }      
+      { categories.map((category, index) => <div className={cx.Breadcrumb__Item} key={`bc-${index}`}>{ index > 0 ? <ArrowRight/> : '' }<span>{category}</span></div> ) }      
     </div>
   );
 }

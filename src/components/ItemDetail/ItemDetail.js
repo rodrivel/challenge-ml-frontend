@@ -35,12 +35,33 @@ function SearchResult() {
 
   
   return (
-    <div className={cx.SearchResult}>
+    <div className={cx.ItemDetail}>
       <Layout>          
           { categories 
             ? <div className={cx.BreadcrumbWrapper}><Breadcrumb categories={categories}/></div>
             : <Skeleton width={400} height={20} style={{marginBottom: '16px'}}/>
           }
+          <div className={cx.ItemDetail__Wrapper}>
+            
+              <div className={cx.ItemDetail__ContentWrapper}>
+                <div className={cx.ItemDetail__ImageWrapper}>
+                  <img src="" alt=""/>
+                </div>
+                <div className={cx.ItemDetail__DescriptionWrapper}>
+                  <div className={cx.ItemDetail__DescriptionTitle}></div>
+                  <div className={cx.ItemDetail__Description}></div>
+                </div>
+              </div>
+              <div className={cx.ItemDetail__CTAWrapper}>
+                <div className={cx.ItemDetail__CTAWrapper__ExtraInfo}></div>
+                <div className={cx.ItemDetail__CTAWrapper__Title}></div>
+                <div className={cx.ItemDetail__CTAWrapper__Price}></div>
+                <div className={cx.ItemDetail__CTAWrapper__CTA}>
+                  <button>Comprar</button>
+                </div>
+              </div>
+            
+          </div> 
       </Layout>
     </div>
 

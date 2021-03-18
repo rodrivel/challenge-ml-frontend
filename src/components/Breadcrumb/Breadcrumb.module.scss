@@ -13,6 +13,14 @@
 
     svg {
       fill: $dark-gray;
+    }    
+
+    &:last-child {
+      span {
+        font-weight: 500;
+      }
     }
   }
+
+
 }
