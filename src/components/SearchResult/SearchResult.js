@@ -7,11 +7,13 @@ import axios from 'axios';
 import cx from './SearchResult.module.scss';
 import Skeleton from 'react-loading-skeleton';
 import NoResults from './NoResults';
+import { useErrorHandler } from 'react-error-boundary';
 
 function SearchResult() {
   const { search } = useLocation();
   const [items, setItems] = useState([{},{},{},{}]);
   const [categories, setCategories] = useState(null);
+  const handleError = useErrorHandler();
 
   useEffect(()=>{
     const query = new URLSearchParams(search);
@@ -20,16 +22,13 @@ function SearchResult() {
       axios.get(`/api/items?q=${q}`)
         .then((response) => {
           const fetchedItems = response.data.items;
-          const fetchedCategories = response.data.categories;
-          console.log(response.data);
+          const fetchedCategories = response.data.categories;          
           if (fetchedItems) {
             setItems(fetchedItems);
             setCategories(fetchedCategories);
-          }
+          }          
         })
-        .catch((error) => {
-          console.log('error', error);
-        })
+        .catch(handleError)
     }
   },[search]);
 
