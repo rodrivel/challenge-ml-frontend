@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: flex-start;
   margin: 16px 0;
+  overflow-x: auto;
 
   .Breadcrumb__Item {     
     display: flex;
@@ -15,6 +16,10 @@
     svg {
       fill: $dark-gray;
     }    
+
+    span {
+      white-space: nowrap;
+    }
 
     &:last-child {
       span {

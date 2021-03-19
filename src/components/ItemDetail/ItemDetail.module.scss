@@ -5,78 +5,17 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-
-
-  .ItemDetail__CTAWrapper {
-    width: 30%;
-    max-width: 400px;
-    padding: 32px;
-    position: sticky;
-    top: 0;
-
-    .ItemDetail__CTAWrapper__ExtraInfo {
-      color: $secondary-text;
-      font-size: 14px;
-      font-weight: 300;
-    }
-
-    .ItemDetail__CTAWrapper__Title {
-      color: $primary-text;
-      font-size: 24px;
-      font-weight: 500;
-      margin-top: 16px;
-      line-height: 1.2;
-    }
-
-    .ItemDetail__CTAWrapper__Price {
-      font-size: 46px;
-      font-weight: 400;
-      margin: 32px 0;
-      display: flex;
-
-      span {
-        line-height: 0.9;
-      }
-
-      .ItemDetail__CTAWrapper__Price__Decimals {
-        font-size: 20px;
-        font-weight: 300;
-        align-self: flex-start;
-        margin-left: 5px;
-      }
-    }
-
-    .ItemDetail__CTAWrapper__CTA {
-      button {
-        background-color: $primary-cta;
-        border: none;
-        border-radius: $border-radius;        
-        color: #fff;
-        cursor: pointer;
-        font-size: 18px;
-        font-weight: 400;
-        padding: 0px 24px;
-        width: 100%;
-        transition: all .2s ease-in;
-        height: 48px;
-
-        &:focus {
-          outline: none;
-        }
-
-        &:hover {
-          background-color: #2968c8;
-        }
-      }
-    }
-  }
+  flex-direction: column;
 
   .ItemDetail__ContentWrapper {
-    width: 70%;
+    width: 100%;
     padding: 32px;
+    display: flex;
+    flex-wrap: wrap;
 
-    .ItemDetail__DescriptionWrapper{
+    .ItemDetail__DescriptionWrapper{      
       padding: 96px 0;
+      width: 100%;
       
       .ItemDetail__DescriptionTitle {
         font-size: 28px;      
@@ -92,14 +31,105 @@
     }
 
     .ItemDetail__ImageWrapper {
-      width: 680px;
-      min-height: 550px;
-      text-align: center;
-      overflow: hidden;
+      width: 100%;      
+      overflow: hidden;      
+      min-height: 200px;
+      text-align: left;
 
       img {        
+        max-width: 680px;
         width: 100%;
         height: auto;
+      }
+    }
+    .ItemDetail__CTAWrapper {
+      width: 100%;
+      max-width: 400px;
+      padding: 32px 0;
+      position: relative;
+      top: 32px;
+  
+      .ItemDetail__CTAWrapper__ExtraInfo {
+        color: $secondary-text;
+        font-size: 14px;
+        font-weight: 300;
+      }
+  
+      .ItemDetail__CTAWrapper__Title {
+        color: $primary-text;
+        font-size: 24px;
+        font-weight: 500;
+        margin-top: 16px;
+        line-height: 1.2;
+      }
+  
+      .ItemDetail__CTAWrapper__Price {
+        font-size: 46px;
+        font-weight: 400;
+        margin: 32px 0;
+        display: flex;
+  
+        span {
+          line-height: 0.9;
+        }
+  
+        .ItemDetail__CTAWrapper__Price__Decimals {
+          font-size: 20px;
+          font-weight: 300;
+          align-self: flex-start;
+          margin-left: 5px;
+        }
+      }
+  
+      .ItemDetail__CTAWrapper__CTA {
+        button {
+          background-color: $primary-cta;
+          border: none;
+          border-radius: $border-radius;        
+          color: #fff;
+          cursor: pointer;
+          font-size: 18px;
+          font-weight: 400;
+          padding: 0px 24px;
+          width: 100%;
+          transition: all .2s ease-in;
+          height: 48px;
+  
+          &:focus {
+            outline: none;
+          }
+  
+          &:hover {
+            background-color: #2968c8;
+          }
+        }
+      }
+    }  
+  }
+
+}
+
+
+@media (min-width: 1200px) {
+  .ItemDetail__Wrapper {
+    flex-direction: row;    
+    
+    .ItemDetail__ContentWrapper {      
+
+      .ItemDetail__ImageWrapper {
+        width: 70%;      
+        min-height: 550px;        
+      }
+
+      .ItemDetail__CTAWrapper {
+        width: 30%;
+        position: sticky;
+        padding: 0 32px;
+      }
+
+      .ItemDetail__DescriptionWrapper {
+        padding: 96px 32px 32px 0;
+        width: 70%;        
       }
     }
   }
