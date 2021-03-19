@@ -10,14 +10,15 @@ import { currencyFormat } from '../../helpers';
 function ListItem(props) {
   const { itemData } = props;
   const { price } = itemData;
+  
   return (
-      <div className={cx.ListItem}>
+      <li className={cx.ListItem}>
         <div className={cx.ListItem__Wrapper}>
           <div className={cx.ListItem__ImgWrapper}>
             <Link to={`/items/${itemData.id}`} className={cx.ListItem__Link}>
               { itemData.picture 
                 ? <img src={itemData.picture} alt={`Imagen ${itemData.title}`}/>
-                : <Skeleton style={{ height: '180px'}}/>
+                : <Skeleton style={{ width: '180px', height: '180px'}}/>
               }              
             </Link>
           </div>
@@ -37,7 +38,7 @@ function ListItem(props) {
                 }
               
               { itemData.title 
-                ? <div className={cx.ListItem__MainInfo__Title}>{itemData.title}</div>
+                ? <h2 className={cx.ListItem__MainInfo__Title}>{itemData.title}</h2>
                 : <Skeleton style={{ marginTop: '8px', display: 'block'}} width={'100%'} count={2}/>
               }         
             </Link>
@@ -50,7 +51,7 @@ function ListItem(props) {
           </div>                   
         </div>
         <div className={cx.ListItem__Divider}></div>    
-      </div>
+      </li>
   );
 }
 

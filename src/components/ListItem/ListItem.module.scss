@@ -62,10 +62,12 @@
           }
 
           .ListItem__MainInfo__Price__Decimals {
-            font-size: 16px;
-            font-weight: 300;
+            font-size: 14px;
+            font-weight: 400;
             align-self: flex-start;
             margin-left: -5px;
+            margin-top: 2px;
+            color: $secondary-text;
           }
         }
 

@@ -10,6 +10,8 @@ import SearchResult from './components/SearchResult/SearchResult';
 import ItemDetail from './components/ItemDetail/ItemDetail';
 import { ErrorBoundary } from 'react-error-boundary';
 import ErrorFallback from './components/ErrorFallback/ErrorFallback';
+import { HelmetProvider } from "react-helmet-async";
+
 
 const errorHandler = (error, info) => {
   // send data to any error client such as Sentry.io
@@ -21,15 +23,17 @@ function App() {
     <BrowserRouter>
       <div className={classes.App}>
         <ErrorBoundary FallbackComponent={ErrorFallback} onError={errorHandler}>
-          <AppBar/>
-          <Switch>
-            <Route path="/items/:id">
-              <ItemDetail />
-            </Route>
-            <Route path="/items">
-              <SearchResult />
-            </Route>
-          </Switch>
+          <HelmetProvider>
+            <AppBar/>
+            <Switch>
+              <Route path="/items/:id">
+                <ItemDetail />
+              </Route>
+              <Route path="/items">
+                <SearchResult />
+              </Route>
+            </Switch>
+          </HelmetProvider>
         </ErrorBoundary>
       </div>
     </BrowserRouter>
