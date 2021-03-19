@@ -4,20 +4,23 @@
   display: flex;
   flex-direction: column;
   background-color: #fff;
+  flex-wrap: wrap;
   
   .ListItem__Wrapper {    
     border-radius: $border-radius;
     display: flex;
     padding: 16px;
-    text-align: left;    
+    text-align: left;
+    flex-wrap: wrap;
   
     .ListItem__Link {
-      text-decoration: none;    
+      text-decoration: none;
+      flex-grow: 1;
     }
   
     .ListItem__ImgWrapper {
-      width: 180px;
-      height: 180px;
+      width: 100%;
+      height: auto;
       border-radius: $border-radius;
       overflow: hidden;
       margin-right: 16px;
@@ -34,6 +37,8 @@
       flex-grow: 1;
       font-size: 1.125rem;
       padding: 32px 0;
+      display: flex;
+      flex-direction: column;
   
       .ListItem__MainInfo__Price {
         font-size: 1.5rem;
@@ -68,9 +73,9 @@
     }
   
     .ListItem__SecondaryInfo {            
-      flex-shrink: 0;
-      padding: 32px;
-      width: 250px;
+      flex-shrink: 0;       
+      padding: 16px 0;
+      justify-self: flex-end;
 
       .ListItem__SecondaryInfo__StateName {
         color: $secondary-text;
@@ -84,5 +89,32 @@
   .ListItem__Divider {
     margin: 0 16px;
     border-bottom: 1px solid $light-gray;
+  }
+}
+
+@media (min-width: 544px) {
+  .ListItem {
+    .ListItem__Wrapper {
+      flex-wrap: nowrap;
+
+      .ListItem__MainInfo {
+        flex-direction: row;
+      }
+
+      .ListItem__SecondaryInfo {
+        padding: 0 32px;        
+      }
+
+      .ListItem__ImgWrapper {
+        width: 180px;
+        height: 180px;
+      }      
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .ListItem__SecondaryInfo {    
+    min-width: 200px;
   }
 }

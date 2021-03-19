@@ -38,16 +38,16 @@ function ListItem(props) {
               
               { itemData.title 
                 ? <div className={cx.ListItem__MainInfo__Title}>{itemData.title}</div>
-                : <Skeleton style={{ marginTop: '8px', display: 'block'}} width={'60%'} count={2}/>
-              }              
+                : <Skeleton style={{ marginTop: '8px', display: 'block'}} width={'100%'} count={2}/>
+              }         
             </Link>
-          </div>          
-          <div className={cx.ListItem__SecondaryInfo}>
-            { itemData && itemData.address?.state_name 
-                ? <div className={cx.ListItem__SecondaryInfo__StateName}>{itemData.address.state_name}</div>
-                : <Skeleton width={150}/>
-              }
-          </div>                
+            <div className={cx.ListItem__SecondaryInfo}>
+              { itemData && itemData.address?.state_name 
+                  ? <div className={cx.ListItem__SecondaryInfo__StateName}>{itemData.address.state_name}</div>
+                  : <Skeleton width={100}/>
+                }
+            </div>          
+          </div>                   
         </div>
         <div className={cx.ListItem__Divider}></div>    
       </div>
