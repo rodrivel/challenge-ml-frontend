@@ -7,9 +7,9 @@ function Breadcrumb(props) {
   const { categories } = props;  
 
   return (
-    <div className={cx.Breadcrumb}>
-      { categories.map((category, index) => <div className={cx.Breadcrumb__Item} key={`bc-${index}`}>{ index > 0 ? <ArrowRight/> : '' }<span>{category}</span></div> ) }      
-    </div>
+    <ul className={cx.Breadcrumb}>
+      { categories.map((category, index) => <li className={cx.Breadcrumb__Item} key={`bc-${index}`}>{ index > 0 ? <ArrowRight/> : '' }<span>{category}</span></li> ) }      
+    </ul>
   );
 }
 
