@@ -8,7 +8,7 @@ function Layout(props) {
     <>
       <Container className={cx.Layout__Container}>
         <Row className={cx.Layout__Container__Row}>
-          <Col sm={10} className={cx.Layout__Container__Row__Col}>
+          <Col xs={12} xxl={10} offset={{ xxl: 1 }}>
             { props.children }
           </Col>
         </Row>

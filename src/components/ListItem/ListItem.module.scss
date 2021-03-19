@@ -42,10 +42,22 @@
         .ListItem__MainInfo__Price__Block {
           display: flex;
           align-items: center;
-          gap: 10px;
           line-height: 1;
           color: $primary-text;
+          gap: 10px;
+
+          span {
+            line-height: 1;
+          }
+
+          .ListItem__MainInfo__Price__Decimals {
+            font-size: 16px;
+            font-weight: 300;
+            align-self: flex-start;
+            margin-left: -5px;
+          }
         }
+
       }
   
       .ListItem__MainInfo__Title {
@@ -55,13 +67,16 @@
       }
     }
   
-    .ListItem__SecondaryInfo {
-      color: $secondary-text;
-      font-size: 12px;
-      font-weight: 300;
+    .ListItem__SecondaryInfo {            
       flex-shrink: 0;
-      padding: 40px 32px;
+      padding: 32px;
       width: 250px;
+
+      .ListItem__SecondaryInfo__StateName {
+        color: $secondary-text;
+        font-size: 12px;
+        font-weight: 300;
+      }
     }
     
   }

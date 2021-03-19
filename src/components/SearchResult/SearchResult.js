@@ -38,7 +38,7 @@ function SearchResult() {
       <Layout>          
           { categories 
             ? <div className={cx.BreadcrumbWrapper}><Breadcrumb categories={categories}/></div>
-            : <Skeleton width={400} height={20} style={{marginBottom: '16px'}}/>
+            : <Skeleton width={400} height={20} style={{margin: '16px 0'}}/>
           }
           { items && items.length == 0 
             ? <div className={cx.NoResultsWrapper}><NoResults/></div>

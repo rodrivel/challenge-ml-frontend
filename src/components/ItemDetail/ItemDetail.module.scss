@@ -1,0 +1,107 @@
+@import '/src/styles/base';
+
+.ItemDetail__Wrapper {
+  background-color: #fff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+
+  .ItemDetail__CTAWrapper {
+    width: 30%;
+    max-width: 400px;
+    padding: 32px;
+    position: sticky;
+    top: 0;
+
+    .ItemDetail__CTAWrapper__ExtraInfo {
+      color: $secondary-text;
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    .ItemDetail__CTAWrapper__Title {
+      color: $primary-text;
+      font-size: 24px;
+      font-weight: 500;
+      margin-top: 16px;
+      line-height: 1.2;
+    }
+
+    .ItemDetail__CTAWrapper__Price {
+      font-size: 46px;
+      font-weight: 400;
+      margin: 32px 0;
+      display: flex;
+
+      span {
+        line-height: 0.9;
+      }
+
+      .ItemDetail__CTAWrapper__Price__Decimals {
+        font-size: 20px;
+        font-weight: 300;
+        align-self: flex-start;
+        margin-left: 5px;
+      }
+    }
+
+    .ItemDetail__CTAWrapper__CTA {
+      button {
+        background-color: $primary-cta;
+        border: none;
+        border-radius: $border-radius;        
+        color: #fff;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 400;
+        padding: 0px 24px;
+        width: 100%;
+        transition: all .2s ease-in;
+        height: 48px;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:hover {
+          background-color: #2968c8;
+        }
+      }
+    }
+  }
+
+  .ItemDetail__ContentWrapper {
+    width: 70%;
+    padding: 32px;
+
+    .ItemDetail__DescriptionWrapper{
+      padding: 32px 0;
+      
+      .ItemDetail__DescriptionTitle {
+        font-size: 28px;      
+      }
+  
+      .ItemDetail__Description {
+        padding: 32px 0;
+        font-size: 16px;
+        font-weight: 300;
+        color: $secondary-text;
+        line-height: 1.5;
+      }
+    }
+
+    .ItemDetail__ImageWrapper {
+      width: 680px;
+      height: 500px;
+      text-align: center;
+      overflow: hidden;
+
+      img {
+        max-width: 400px;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

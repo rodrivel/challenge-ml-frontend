@@ -1,8 +1,7 @@
-@import '../../styles/base';
+@import '/src/styles/base';
 
-.SearchResult {
-  margin-top: $gutter;
-
+.SearchResult {  
+  
   .BreadcrumbWrapper {
     margin-bottom: 16px;
   }

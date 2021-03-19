@@ -4,14 +4,8 @@ import cx from './ListItem.module.scss';
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import iconFreeShipping from '../../assets/ic_shipping@2x.png.png';
+import { currencyFormat } from '../../helpers';
 
-
-function currencyFormat(num)
-{
-    var num_parts = num.toString().split(".");
-    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    return num_parts.join(",");
-}
 
 function ListItem(props) {
   const { itemData } = props;
@@ -34,6 +28,7 @@ function ListItem(props) {
                     <div className={cx.ListItem__MainInfo__Price}>
                       <div className={cx.ListItem__MainInfo__Price__Block}>
                         <span>{price && price.currency === 'ARS' ? '$ ' : price.currency }{currencyFormat(price.amount)}</span>
+                        { itemData.price.decimals > 0 ? <span className={cx.ListItem__MainInfo__Price__Decimals }>{ itemData.price.decimals }</span> : null }
                         { itemData.free_shipping && <span><img width={20} src={iconFreeShipping}/></span> }
                       </div>
                     </div>
@@ -44,11 +39,14 @@ function ListItem(props) {
               { itemData.title 
                 ? <div className={cx.ListItem__MainInfo__Title}>{itemData.title}</div>
                 : <Skeleton style={{ marginTop: '8px', display: 'block'}} width={'60%'} count={2}/>
-              }
+              }              
             </Link>
           </div>          
           <div className={cx.ListItem__SecondaryInfo}>
-            Capital Federal
+            { itemData && itemData.address?.state_name 
+                ? <div className={cx.ListItem__SecondaryInfo__StateName}>{itemData.address.state_name}</div>
+                : <Skeleton width={150}/>
+              }
           </div>                
         </div>
         <div className={cx.ListItem__Divider}></div>    
