@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from './ListItem.module.scss';
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
-import iconFreeShipping from '../../assets/ic_shipping@2x.png.png';
+import IconShipping from '../IconShipping/IconShipping';
 import { currencyFormat } from '../../helpers';
 
 
@@ -29,7 +29,7 @@ function ListItem(props) {
                       <div className={cx.ListItem__MainInfo__Price__Block}>
                         <span>{price && price.currency === 'ARS' ? '$ ' : price.currency }{currencyFormat(price.amount)}</span>
                         { itemData.price.decimals > 0 ? <span className={cx.ListItem__MainInfo__Price__Decimals }>{ itemData.price.decimals }</span> : null }
-                        { itemData.free_shipping && <span><img width={20} src={iconFreeShipping}/></span> }
+                        { itemData.free_shipping && <span><IconShipping/></span> }
                       </div>
                     </div>
                   )
