@@ -20,10 +20,10 @@ function ItemDetail() {
       axios.get(`/api/items/${id}`)
         .then((response) => {          
           const fetchedItemData = response.data.item;       
-          const fetchedCategories = response.data.categories;
+          const { categories } = fetchedItemData;          
           if (fetchedItemData) {
             setItemData(fetchedItemData);
-            setCategories(fetchedCategories);
+            setCategories(categories);
           }
         })
         .catch(handleError)
@@ -35,7 +35,7 @@ function ItemDetail() {
       <Layout>          
           { categories 
             ? <div className={cx.BreadcrumbWrapper}><Breadcrumb categories={categories}/></div>
-            : <Skeleton width={400} height={20} style={{marginBottom: '16px'}}/>
+            : <Skeleton width={400} height={20} style={{margin: '16px 0'}}/>
           }
           <div className={cx.ItemDetail__Wrapper}>
             <div className={cx.ItemDetail__ContentWrapper}>
