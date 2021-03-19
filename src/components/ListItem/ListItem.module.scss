@@ -25,11 +25,17 @@
       overflow: hidden;
       margin-right: 16px;
       flex-shrink: 0;
-  
-      img {
+      
+      .ListItem__Link {
+        display: flex;
+        justify-content: center;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+      }
+
+      img {
+        width: auto;
+        height: auto;        
       }
     }
   
@@ -92,7 +98,7 @@
   }
 }
 
-@media (min-width: 544px) {
+@media (min-width: 768px) {
   .ListItem {
     .ListItem__Wrapper {
       flex-wrap: nowrap;
