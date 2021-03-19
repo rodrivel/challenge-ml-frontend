@@ -40,7 +40,7 @@ function SearchResult() {
   return (
     <div className={cx.SearchResult}>
       <Helmet>
-        <title>{`${searchString} | MercadoLibre.com.ar`}</title>
+        <title>{`${searchString} | Mercado Libre`}</title>
         <meta name='description' content={`Encontrá ${searchString} en Mercadolibre.com.ar! Entrá y conocé nuestras increíbles ofertas y promociones. Descubrí la mejor forma de comprar online.`}></meta>
       </Helmet>
       <Layout>          

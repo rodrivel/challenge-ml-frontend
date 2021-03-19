@@ -8,7 +8,7 @@ import Skeleton from 'react-loading-skeleton';
 import { useErrorHandler } from 'react-error-boundary';
 import { currencyFormat } from '../../helpers';
 import { useScreenClass } from 'react-grid-system';
-
+import { Helmet } from "react-helmet-async";
 
 
 function ItemDetail() {
@@ -53,6 +53,13 @@ function ItemDetail() {
   
   return (
     <div className={cx.ItemDetail}>
+      { itemData && itemData.title 
+        ? <Helmet>
+            <title>{`${itemData.title} | Mercado Libre`}</title>
+            <meta name='description' content={`Compralo en Mercado Libre a ${itemData.price && itemData.price.currency === 'ARS' ? '$ ' : itemData.price.currency }${currencyFormat(itemData.price.amount)}. ${itemData.categories ? 'Encontrá más productos de '  + itemData.categories.join(', ') : ''}`}></meta>
+          </Helmet>
+        : null
+      }      
       <Layout>          
           { categories 
             ? <div className={cx.BreadcrumbWrapper}><Breadcrumb categories={categories}/></div>
@@ -78,12 +85,12 @@ function ItemDetail() {
                   : <Skeleton/>
                 }
               </div>
-              <div className={cx.ItemDetail__CTAWrapper__Title}>
+              <h1 className={cx.ItemDetail__CTAWrapper__Title}>
                 { itemData && itemData.title 
                   ? itemData.title
                   : <Skeleton count={2}/>
                 }
-              </div>
+              </h1>
               <div className={cx.ItemDetail__CTAWrapper__Price}>
                 { itemData && itemData.price
                   ? 
