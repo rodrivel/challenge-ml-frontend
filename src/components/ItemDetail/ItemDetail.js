@@ -29,6 +29,10 @@ function ItemDetail() {
         .catch(handleError)
     }
   },[params]);
+
+  useEffect(() => {
+    window.scroll(0,0);
+  },[]);
   
   return (
     <div className={cx.ItemDetail}>
@@ -49,7 +53,17 @@ function ItemDetail() {
                 <div className={cx.ItemDetail__DescriptionTitle}>
                   Descripción del Producto
                 </div>
-                <div className={cx.ItemDetail__Description}>{ itemData && itemData.description || <Skeleton count={3}/> }</div>
+                { 
+                  <div className={cx.ItemDetail__Description}>
+                    { !itemData 
+                      ? <Skeleton count={3}/>
+                      : itemData.description !== ''
+                        ? itemData.description
+                        : "Anuncio sin descripción"
+                    }                    
+                  </div>
+                }
+                
               </div>
             </div>
         
