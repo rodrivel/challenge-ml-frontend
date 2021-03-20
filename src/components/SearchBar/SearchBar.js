@@ -29,7 +29,7 @@ function SearchBar(props) {
   }
 
   return (
-    <form onSubmit={submitSearchHandler} className={[cx.SearchBar, props.fullWidth ? cx.SearchBar__fullWidth : ''].join(' ')}>  
+    <form onSubmit={submitSearchHandler} className={[cx.SearchBar, props.fullWidth ? cx.SearchBar__fullWidth : ''].join(' ')} data-testid='search-form'>  
         <input autoComplete='off' className={cx.SearchBar__input} name="q" placeholder="Nunca dejes de buscar" value={searchValue} onChange={handleChange}/>
         <button className={cx.SearchBar__button} type="submit">
           <IconSearch/>
