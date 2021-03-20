@@ -7,8 +7,7 @@ import IconShipping from '../IconShipping/IconShipping';
 import { currencyFormat } from '../../helpers';
 
 
-function ListItem(props) {
-  const { itemData } = props;
+const listItem = ({ itemData }) => {  
   const { price } = itemData;
   
   return (
@@ -55,8 +54,8 @@ function ListItem(props) {
   );
 }
 
-ListItem.propTypes = {
+listItem.propTypes = {
   itemData: PropTypes.object.isRequired  
 }
 
-export default ListItem;
+export default listItem;
