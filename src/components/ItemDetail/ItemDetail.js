@@ -10,26 +10,23 @@ import { currencyFormat } from '../../helpers';
 import { useScreenClass } from 'react-grid-system';
 import { Helmet } from "react-helmet-async";
 
+export const getItemFromAPI = (id) => axios.get(`/api/items/${id}`)
+  .then(response => response.data.item || {});
 
 function ItemDetail() {
   const params = useParams();
-  const [itemData, setItemData] = useState(null);
-  const [categories, setCategories] = useState(null);
+  const [itemData, setItemData] = useState(null);  
   const handleError = useErrorHandler();
   const screenClass = useScreenClass();
   
   useEffect(()=>{        
     const id = params['id'];
     if (id) {
-      axios.get(`/api/items/${id}`)
-        .then((response) => {          
-          const fetchedItemData = response.data.item;       
-          const { categories } = fetchedItemData;          
-          if (fetchedItemData) {
-            setItemData(fetchedItemData);
-            setCategories(categories);
+      getItemFromAPI(id)
+        .then((fetchedItemData) => {
+            setItemData(fetchedItemData);            
           }
-        })
+        )
         .catch(handleError)
     }
   },[params]);
@@ -61,8 +58,8 @@ function ItemDetail() {
         : null
       }      
       <Layout>          
-          { categories 
-            ? <div className={cx.BreadcrumbWrapper}><Breadcrumb categories={categories}/></div>
+          { itemData && itemData.categories 
+            ? <div className={cx.BreadcrumbWrapper}><Breadcrumb categories={itemData && itemData.categories}/></div>
             : <Skeleton width={280} height={20} style={{margin: '16px 0'}}/>
           }
           <div className={cx.ItemDetail__Wrapper}>
