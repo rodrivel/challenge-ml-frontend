@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Container, Col, Row } from 'react-grid-system';
 import cx from './Layout.module.scss';
 
-function Layout(props) {
+const layout = (props) => {
   return (
     <>
       <Container className={cx.Layout__Container}>
@@ -17,11 +17,11 @@ function Layout(props) {
   );
 }
 
-Layout.propTypes = {
+layout.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.array
   ])
 }
 
-export default Layout;
+export default layout;
