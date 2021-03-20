@@ -4,7 +4,7 @@ import cx from './ListItem.module.scss';
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import IconShipping from '../IconShipping/IconShipping';
-import { currencyFormat } from '../../helpers';
+import { currencyFormat } from '../../helpers/currencyFormat';
 
 
 const listItem = ({ itemData }) => {  

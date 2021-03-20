@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 import SearchBar from './SearchBar';
-import { renderWithRouter } from '../../hoc';
+import { renderWithRouter } from '../../helpers/renderWithRouter';
 import userEvent from '@testing-library/user-event';
 
 

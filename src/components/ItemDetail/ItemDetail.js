@@ -6,7 +6,7 @@ import axios from 'axios';
 import cx from './ItemDetail.module.scss';
 import Skeleton from 'react-loading-skeleton';
 import { useErrorHandler } from 'react-error-boundary';
-import { currencyFormat } from '../../helpers';
+import { currencyFormat } from '../../helpers/currencyFormat';
 import { useScreenClass } from 'react-grid-system';
 import { Helmet } from "react-helmet-async";
 
