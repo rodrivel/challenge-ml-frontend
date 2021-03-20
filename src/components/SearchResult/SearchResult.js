@@ -50,7 +50,7 @@ function SearchResult() {
           }
           { items && items.length == 0 
             ? <div className={cx.NoResultsWrapper}><NoResults/></div>
-            : <ul>
+            : <ul id='results'>
                 { items.map((item) => <ListItem key={`item-${item.id || Math.random() }`} itemData={item} />) }
               </ul>
           }          

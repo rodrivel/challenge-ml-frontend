@@ -12,7 +12,7 @@ function ListItem(props) {
   const { price } = itemData;
   
   return (
-      <li className={cx.ListItem}>
+      <li className={cx.ListItem} data-item-id={itemData && itemData.id}>
         <div className={cx.ListItem__Wrapper}>
           <div className={cx.ListItem__ImgWrapper}>
             <Link to={`/items/${itemData.id}`} className={cx.ListItem__Link}>

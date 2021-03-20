@@ -7,7 +7,7 @@ import cx from './Logo.module.scss';
 
 const Logo = (props) => {
   return (
-    <Link to="/" className={cx.Logo__Link}>
+    <Link to="/" className={cx.Logo__Link} id='logo-link'>
       <img width={props.width || 106} src={logo} srcSet={`${logo} 53w, ${logo2x} 106w`} alt="Logo Mercadolibre"/>
     </Link>
   );
