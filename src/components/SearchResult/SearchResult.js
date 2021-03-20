@@ -10,6 +10,7 @@ import NoResults from './NoResults';
 import { useErrorHandler } from 'react-error-boundary';
 import { Helmet } from "react-helmet-async";
 
+export const getItems = (q) => axios.get(`/api/items?q=${q}`);
 
 function SearchResult() {
   const { search } = useLocation();
@@ -23,7 +24,7 @@ function SearchResult() {
     const q = query.get('q');    
     if (q) {    
       setSearchString(q);  
-      axios.get(`/api/items?q=${q}`)
+      getItems(q)
         .then((response) => {
           const fetchedItems = response.data.items;
           const fetchedCategories = response.data.categories;          
