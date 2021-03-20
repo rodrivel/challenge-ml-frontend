@@ -1,4 +1,4 @@
-import { getItemFromAPI } from './ItemDetail';
+import { imageSkeletonHeight, getItemFromAPI } from './ItemDetail';
 import axios from 'axios';
 
 jest.mock("axios");
@@ -14,4 +14,14 @@ describe('ItemDetail', ()=> {
     expect.assertions(2);
   
   });
+
+  it('returns 200px as default value when screen size does not exist', () => {
+    const height = imageSkeletonHeight('xxxxxxxxl');
+    expect(height).toBe('200px')
+  })
+
+  it('returns correct value when screen size does not exist', () => {
+    const height = imageSkeletonHeight('xl');
+    expect(height).toBe('680px');
+  })
 })

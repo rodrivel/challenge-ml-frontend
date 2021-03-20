@@ -13,6 +13,18 @@ import { Helmet } from "react-helmet-async";
 export const getItemFromAPI = (id) => axios.get(`/api/items/${id}`)
   .then(response => response.data.item || {});
 
+export const imageSkeletonHeight = (sClass) => {
+    const mapHeight = {
+      'xs' : '400px',
+      'sm' : '500px',
+      'md' : '500px',
+      'lg' : '600px',
+      'xl' : '680px',
+      'xxl' : '680px',
+    }
+    return mapHeight[sClass] || '200px';
+  }
+
 function ItemDetail() {
   const params = useParams();
   const [itemData, setItemData] = useState(null);  
@@ -34,19 +46,7 @@ function ItemDetail() {
   useEffect(() => {
     window.scroll(0,0);
   },[]);
-
-  const imageSkeletonHeight = (sClass) => {
-    const mapHeight = {
-      'xs' : '400px',
-      'sm' : '500px',
-      'md' : '500px',
-      'lg' : '600px',
-      'xl' : '680px',
-      'xxl' : '680px',
-    }
-
-    return mapHeight[sClass] || '200px';
-  }
+  
   
   return (
     <div className={cx.ItemDetail}>
