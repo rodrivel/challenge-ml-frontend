@@ -3,13 +3,17 @@
 React app that exposes that let you perform a search, view a list of results and access a product detail.
 
 
+## Prerequisites
+
+It is necessary to first complete the [backend installation](https://github.com/rodrivel/challenge-ml-frontend/blob/main/README.md) so when the frontend app runs the backend API is ready to respond.
+
 ## Installation
 
 There are two ways of running the application.
 - conteinerized with docker.
 - locally with nodejs.
 
-The default port in both cases is 4000, so once the app is running you will be able to find it in your browser at [http://localhost:4000](localhost:4000).
+The default port in both cases is 4000, so once the app is running you will be able to find it in your browser at [localhost:4000](http://localhost:4000).
 
 ### Docker
 
