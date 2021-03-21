@@ -3,5 +3,5 @@ import { shallow } from 'enzyme';
 import ErrorFallback from './ErrorFallback';
 
 it('expect to render ErrorFallback component', () => {
-  expect(shallow(<ErrorFallback/>)).toMatchSnapshot();
+  expect(shallow(<ErrorFallback />)).toMatchSnapshot();
 });

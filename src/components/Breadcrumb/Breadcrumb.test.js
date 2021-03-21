@@ -6,7 +6,7 @@ it('expect to render Breadcrumb component', () => {
   const mockCategories = [
     'Celulares y Teléfonos',
     'Smartwatches y Accesorios',
-    'Smartwatch',    
-  ]
-  expect(shallow(<Breadcrumb categories={ mockCategories } />)).toMatchSnapshot();
+    'Smartwatch',
+  ];
+  expect(shallow(<Breadcrumb categories={mockCategories} />)).toMatchSnapshot();
 });

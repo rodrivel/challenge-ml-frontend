@@ -3,5 +3,5 @@ import { shallow } from 'enzyme';
 import Logo from './Logo';
 
 it('expect to render Logo component', () => {
-  expect(shallow(<Logo/>)).toMatchSnapshot();
+  expect(shallow(<Logo />)).toMatchSnapshot();
 });
