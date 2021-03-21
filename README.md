@@ -1,26 +1,41 @@
-# Frontend Challenge MercadoLibre
+# Challenge MercadoLibre - Frontend
 
-## Available Scripts
+React app that exposes that let you perform a search, view a list of results and access a product detail.
 
-In the project directory, you can run:
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+There are two ways of running the application.
+- conteinerized with docker.
+- locally with nodejs.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The default port in both cases is 4000, so once the app is running you will be able to find it in your browser at [http://localhost:4000](localhost:4000).
 
-### `npm test`
+### Docker
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You'll need to have docker installed on your machine.
+Then, in the root of the project, run the following commands.
+```sh
+sudo docker build -t meli-frontend .
+sudo docker run -d -p 4000:4000 --name frontend-container meli-frontend
+```
 
-### `npm run build`
+> Note: To stop and remove the container:
+```sh
+sudo docker rm -f frontend-container
+```
+### Locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You'll need to have nodejs v12+ and npm v6.14+ installed on your machine.
+Then, in the root of the project, run the following commands.
+```sh
+npm i
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
+## How to run tests
 
+Having set up the app locally, you are able to check and see a coverage report with the command. 
+```sh
+npm run test
+```
